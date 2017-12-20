@@ -1,10 +1,11 @@
 {
   "name": "cookie-jar",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Incentivised Task Management application",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "set-up": "cd client && yarn install && cd .. && yarn install",
     "client": "cd client && yarn start",
     "build-client": "cd client && yarn build"
   },
