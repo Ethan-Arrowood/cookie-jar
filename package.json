@@ -1,6 +1,6 @@
 {
   "name": "cookie-jar",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Incentivised Task Management application",
   "main": "index.js",
   "scripts": {
