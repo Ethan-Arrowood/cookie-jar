@@ -1,14 +1,26 @@
 {
   "name": "cookie-jar",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "Incentivised Task Management application",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "set-up": "cd client && yarn install && cd .. && yarn install",
-    "client": "cd client && yarn start",
-    "build-client": "cd client && yarn build"
+  "engines": {
+    "node": "9.2.1",
+    "npm": "5.5.1"
   },
+  "scripts": {
+    "test": "node tests/test.js",
+    "start-server": "nodemon index.js",
+    "set-up": "cd client && npm install && cd .. && npm install",
+    "start-client": "cd client && npm start",
+    "build-client": "cd client && npm run build",
+    "dev": "concurrently \"npm run start-server\" \"npm run start-client\" ",
+    "start": "node index.js",
+    "heroku-postbuild": "cd client/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+  },
+  "cacheDirectories": [
+    "node_modules",
+    "client/node_modules"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Ethan-Arrowood/cookie-jar.git"
@@ -18,5 +30,12 @@
   "bugs": {
     "url": "https://github.com/Ethan-Arrowood/cookie-jar/issues"
   },
-  "homepage": "https://github.com/Ethan-Arrowood/cookie-jar#readme"
+  "homepage": "https://github.com/Ethan-Arrowood/cookie-jar#readme",
+  "dependencies": {
+    "concurrently": "^3.5.1",
+    "fastify": "^0.36.0",
+    "fastify-static": "^0.4.1",
+    "nodemon": "^1.13.3",
+    "tape": "^4.8.0"
+  }
 }
