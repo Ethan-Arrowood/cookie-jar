@@ -1,19 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 body, div, ul, li, h1, h2, h3, h4, h5, h6 { margin: 0; padding: 0 };
 
 /* Container Styling */
-.abc {
+.container {
   height: 100vh;
   display: grid;
-  grid-template-areas: "h"
-                       "b"
-                       "f";
   grid-template: 80px auto 70px / auto;
 }
 
 /* Header Styling */
 .header {
-  grid-area: h;
   grid-column: 1 / -1;
   grid-row: 1 / 2;
   display: grid;
@@ -54,13 +52,47 @@ body, div, ul, li, h1, h2, h3, h4, h5, h6 { margin: 0; padding: 0 };
 }
 /* Body Styling */
 .body {
-  grid-area: b;
   grid-column: 1 / -1;
   grid-row: 2 / 3;
+  background-color: rgb(204, 144, 81);
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+.cookie-section {
+  grid-column: 1 / 2;
+}
+.text-section {
+  grid-column: 2 / -1;
+  color: #260B01;
+}
+.text-section > h1 {
+  font-family: 'Pacifico', cursive;
+  font-weight: normal;
+}
+.text-section > p {
+  font-family: 'Open Sans';
+  font-size: 1.4rem;
+}
+.get-started {
+  font-size: 24px;
+  font-family: 'Open Sans';
+  cursor: pointer;
+  border: 3px solid #401801;
+  border-radius: 2px;
+  background-color: #8C5423;
+  color: #401801;
+  padding: 5px 10px;
+}
+.get-started:hover {
+  background-color: #733614;
+}
+.cookie {
+  height: auto;
+  width: 200px;
+  margin: 15px;
 }
 /* Footer Styling */
 .footer {
-  grid-area: f;
   grid-column: 1 / -1;
   grid-row: 3 / 4;
   display: grid;
@@ -72,10 +104,10 @@ body, div, ul, li, h1, h2, h3, h4, h5, h6 { margin: 0; padding: 0 };
 
 .social-media {
   grid-area: m;
-  margin: 10px;
 }
 
 .footer-menu {
+  margin-top: 19px;
   display: grid;
   grid-template: auto / repeat(4, 1fr);
 }
@@ -84,15 +116,21 @@ body, div, ul, li, h1, h2, h3, h4, h5, h6 { margin: 0; padding: 0 };
   display: grid;
   cursor: pointer;
 }
+
+.footer-menu > li:hover {
+  color: #260B01;
+}
+
 .api-status {
   grid-area: a;
-}
-.copywrite {
-  grid-area: c;
-}
-.api-status, .copywrite {
   display: grid;
 }
-.api-status > span, .copywrite > span {
+
+.api-status > span, .copyright > span {
   margin: auto;
+}
+
+.copyright {
+  grid-area: c;
+  display: grid;
 }
