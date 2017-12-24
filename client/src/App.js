@@ -1,24 +1,26 @@
 import React from 'react';
 import 'whatwg-fetch';
 
+import Home from './Home'
+
 class App extends React.Component {
   constructor() {
     super()
     this.state = {
-      body: ''
+      apiStatus: ''
     }
   }
   componentDidMount() {
-    fetch('/api')
-      .then(res => res.text())
-      .then(body => this.setState({body}))
-      .catch(err => console.log('err: ', err))
+    fetch('/api/status')
+      .then(res => {
+        this.setState({apiStatus: res.statusText})
+      })
+      .catch(err => console.log(err))
   }
   render() {
     return (
-      <div>
-        <h1>Cookie Jar</h1>
-        <h4>{this.state.body}</h4>
+      <div style={{height: '100vh'}}>
+        <Home apiStatus={this.state.apiStatus}/>
       </div>
     )
   }

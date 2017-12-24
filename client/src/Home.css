@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+body, div, ul, li, h1, h2, h3, h4, h5, h6 { margin: 0; padding: 0 };
+
+/* Container Styling */
+.container {
+  height: 100vh;
+  display: grid;
+  grid-template-areas: "h"
+                       "b"
+                       "f";
+  grid-template: 80px auto 70px / auto;
+}
+
+/* Header Styling */
+.header {
+  grid-area: h;
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+  display: grid;
+  grid-template-areas: 
+    ". t . . . . . . . m m .";
+  background-color: #AB7237;
+  font-family: 'Pacifico', cursive;
+  color: #401801;
+}
+
+.header > .title {
+  grid-area: t;
+  margin: 10px 15px;
+}
+
+.header > .title > h1 {
+  font-weight: normal;
+}
+
+.header-menu {
+  grid-area: m;
+  display: grid;
+  grid-template: auto / repeat(4, 1fr);
+}
+
+.header-menu > li {
+  display: grid;
+  cursor: pointer;
+}
+
+.header-menu > li:hover {
+  background-color: #8C5423;
+}
+
+.header-menu > li > span {
+  margin: auto;
+  font-size: 1.2rem;
+}
+/* Body Styling */
+.body {
+  grid-area: b;
+  grid-column: 1 / -1;
+  grid-row: 2 / 3;
+}
+/* Footer Styling */
+.footer {
+  grid-area: f;
+  grid-column: 1 / -1;
+  grid-row: 3 / 4;
+  display: grid;
+  grid-template-areas: 
+    ". m . . . . . . . a c .";
+  background-color: #733614;
+  color: #AB7237;
+}
+
+.social-media {
+  grid-area: m;
+  margin: 10px;
+}
+
+.footer-menu {
+  display: grid;
+  grid-template: auto / repeat(4, 1fr);
+}
+
+.footer-menu > li {
+  display: grid;
+  cursor: pointer;
+}
+.api-status {
+  grid-area: a;
+}
+.copywrite {
+  grid-area: c;
+}
+.api-status, .copywrite {
+  display: grid;
+}
+.api-status > span, .copywrite > span {
+  margin: auto;
+}
