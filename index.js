@@ -7,9 +7,9 @@ fastify.register(require('fastify-static'), {
   root: path.join(__dirname, 'client/build/')
 })
 
-fastify.get('/api', (req, reply) => reply.send('Hello World!'))
+fastify.get('/api/status', (req, reply) => reply.send('Healthy'))
 
-fastify.get('/home', (req, reply) => reply.sendFile(path.join(__dirname, 'client/build/', 'index.html')))
+fastify.get('/home', (req, reply) => reply.sendFile('index.html'))
 
 fastify.listen(PORT, err => {
   if (err) throw err

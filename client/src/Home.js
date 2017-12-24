@@ -4,7 +4,7 @@ import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import './Home.css';
 
 export default ({ apiStatus }) => (
-  <div className="container">
+  <div className="abc">
     <div className="header">
       <div className="title">
         <h1>Cookie Jar</h1>
