@@ -1,16 +1,41 @@
 {
   "name": "cookie-jar",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "react-scripts": "1.0.17"
+  "version": "0.0.5",
+  "description": "Incentivised Task Management application",
+  "main": "index.js",
+  "engines": {
+    "node": "9.2.1",
+    "npm": "5.5.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "test": "node tests/test.js",
+    "start-server": "nodemon index.js",
+    "set-up": "cd client && npm install && cd .. && npm install",
+    "start-client": "cd client && npm start",
+    "build-client": "cd client && npm run build",
+    "dev": "concurrently \"npm run start-server\" \"npm run start-client\" ",
+    "start": "node index.js",
+    "heroku-postbuild": "cd client/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+  },
+  "cacheDirectories": [
+    "node_modules",
+    "client/node_modules"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ethan-Arrowood/cookie-jar.git"
+  },
+  "author": "Ethan Arrowood",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ethan-Arrowood/cookie-jar/issues"
+  },
+  "homepage": "https://github.com/Ethan-Arrowood/cookie-jar#readme",
+  "dependencies": {
+    "concurrently": "^3.5.1",
+    "fastify": "^0.36.0",
+    "fastify-static": "^0.4.1",
+    "nodemon": "^1.13.3",
+    "tape": "^4.8.0"
   }
 }
