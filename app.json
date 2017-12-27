@@ -3,6 +3,10 @@
   "scripts": {
   },
   "env": {
+    "NPM_CONFIG_FA_REGISTRY": {
+      "description": "FortAwesome Pro registry key",
+      "required": true
+    }
   },
   "formation": {
     "web": {
